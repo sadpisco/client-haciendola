@@ -1,19 +1,25 @@
-import { LOGIN_USER, REGISTER_USER, FORGOT_PASSWORD, GET_ALL_PRODUCTS, CREATE_PRODUCT, UPDATE_PRODUCT, DELETE_PRODUCT} from './actions';
+import { LOGIN_USER, LOGIN_FAILED, REGISTER_USER, FORGOT_PASSWORD, GET_ALL_PRODUCTS, CREATE_PRODUCT, UPDATE_PRODUCT, DELETE_PRODUCT, LOGOUT} from './actions';
 
 const estadoinicial = {
-    userLogged: []
+    userLogged: {},
+    loginMessage: '',
+    allProducts: []
 }
 
-const rootReducer = (estadoinicial, action) => {
+const rootReducer = (state = estadoinicial, action) => {
     switch(action.type){
         case LOGIN_USER:
-            return ;
+            return { ...state, userLogged: action.payload, loginMessage: 'Success!'};
+        case LOGIN_FAILED:
+            return { ...state, loginMessage: action.payload.message};
+        case LOGOUT:
+            return { ...state, userLogged: {}, loginMessage: ''};
         case REGISTER_USER:
             return ;
         case FORGOT_PASSWORD:
             return ;
         case GET_ALL_PRODUCTS:
-            return;
+            return { ...state, allProducts: action.payload};
         case CREATE_PRODUCT:
             return;
         case UPDATE_PRODUCT:
