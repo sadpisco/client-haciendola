@@ -14,7 +14,7 @@ export default function Header(){
     }
 
     return(
-        <section className=" bg-zinc-900 w-screen flex flex-row items-center justify-around p-4 text-white relative top-0">
+        <section className=" bg-zinc-900 w-screen flex flex-row items-center justify-around p-4 text-white sticky top-0 z-10">
                         <h4 className = "font-montserrat font-regular">Usuario Logueado: {userLogged?.user?.username}</h4>
             <Button onClick={quitSession} className = "font-montserrat">Log Out</Button>
         </section>
