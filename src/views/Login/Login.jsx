@@ -44,8 +44,8 @@ function Login(){
             </div>
             <p className = "text-red font-montserrat text-xl text-center w-auto">{message}</p>
             <div className = 'flex flex-row w-screen items-center justify-center gap-[2vh] p-4'>
-            <Button type = 'submit' className = "font-montserrat text-md">Log In</Button>
-            <Button type = 'button' onClick={ () => navigate('/register')} className = "font-montserrat text-md">Register</Button>
+            <Button type = 'submit' className = "font-montserrat text-md">Iniciar Sesion</Button>
+            <Button type = 'button' onClick={ () => navigate('/register')} className = "font-montserrat text-md">Registrarme</Button>
             </div>
             </form>
             <DevTool control = {control}/>

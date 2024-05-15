@@ -8,6 +8,7 @@ export const FORGOT_PASSWORD = 'FORGOT_PASSWORD';
 
 //PRODUCTS ACTIONS 
 export const GET_ALL_PRODUCTS = 'GET_ALL_PRODUCTS';
+export const GET_PRODUCT = 'GET_PRODUCT';
 export const CREATE_PRODUCT = 'CREATE_PRODUCT';
 export const UPDATE_PRODUCT = 'UPDATE_PRODUCT';
 export const DELETE_PRODUCT = 'DELETE_PRODUCT';
@@ -87,4 +88,70 @@ export function getAllProducts (){
             return{ error: error.message };
         }
     }
+}
+
+export function deleteProduct(sku){
+    const endPoint = `/product/${sku}`;
+    return async (dispatch) => {
+        try {
+            const { data } = await axios.delete(endPoint);
+            dispatch({
+                type:DELETE_PRODUCT,
+                payload: data
+            })
+        } catch (error){
+            console.log(error);
+            return{ error: error.message };
+        }
+    }
+}
+
+export function getProduct(id){
+    const endPoint = `/product/${id}`;
+    return async (dispatch) => {
+        try {
+            const { data } = await axios.get(endPoint);
+            dispatch({
+                type:GET_PRODUCT,
+                payload: data
+            })
+        } catch (error){
+            console.log(error);
+            return{ error: error.message };
+        }
+    }
+}
+
+export function updateProduct(product){
+    const endPoint = `/product/${product.sku}`;
+    return async (dispatch) => {
+        try {
+            const { data } = await axios.post(endPoint, product);
+            dispatch({
+                type:UPDATE_PRODUCT,
+                payload: data
+            })
+        } catch (error){
+            console.log(error);
+            return{ error: error.message };
+        }
+    }
+}
+
+export function createProduct(product){
+    const endPoint = '/product';
+    console.log(product);
+    return async (dispatch) => {
+        try {
+            const { data } = await axios.post(endPoint, product);
+            dispatch({
+                type:CREATE_PRODUCT,
+                payload: data
+            })
+        } catch (error){
+            console.log(error);
+            return{ error: error.message };
+        }
+    }
+
 }

@@ -1,11 +1,14 @@
 .holeModal{
     position: fixed;
-    z-index: 200;
+    z-index: 999;
     top: 0;
     left: 0;
     width: 100vw;
     min-height: 100vh;
+    height: auto;
+    margin-bottom: 2vh;
     background-color: rgba(20, 20, 20, 0.92);
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
