@@ -3,19 +3,20 @@ import { LOGIN_USER, LOGIN_FAILED, REGISTER_USER, FORGOT_PASSWORD, GET_ALL_PRODU
 const estadoinicial = {
     userLogged: {},
     loginMessage: '',
+    registerMessage: '',
     allProducts: []
 }
 
 const rootReducer = (state = estadoinicial, action) => {
     switch(action.type){
         case LOGIN_USER:
-            return { ...state, userLogged: action.payload, loginMessage: 'Success!'};
+            return { ...state, userLogged: action.payload, loginMessage: 'Success!', registerMessage: ''};
         case LOGIN_FAILED:
-            return { ...state, loginMessage: action.payload.message};
+            return { ...state, loginMessage: action.payload.message, registerMessage: ''};
         case LOGOUT:
-            return { ...state, userLogged: {}, loginMessage: ''};
+            return { ...state, userLogged: {}, loginMessage: '', registerMessage: ''};
         case REGISTER_USER:
-            return ;
+            return { ...state, registerMessage: action.payload.message};
         case FORGOT_PASSWORD:
             return ;
         case GET_ALL_PRODUCTS:
