@@ -36,32 +36,32 @@ export default function ProductModal({product, setModal, deleteProducto}){
           </div>
           <div className="flex flex-col items-center justify-center w-[90%] gap-[1vh] h-auto">
             <div className="flex flex-col items-center justify-between w-full bg-slate-900 p-2 rounded-md ">
-              <p className="w-auto font-montserrat">Description</p>
+              <p className="w-auto font-montserrat font-semibold">Description</p>
               <p className="w-auto font-montserrat">{product.description}</p>
             </div>
             <div className="flex flex-row items-center justify-between w-full bg-slate-900 p-2 rounded-md">
-              <p className="w-auto">SKU</p>
-              <p className="w-auto">{product.sku}</p>
+              <p className="w-auto font-montserrat font-semibold">SKU</p>
+              <p className="w-auto font-montserrat">{product.sku}</p>
             </div>
             <div className="flex flex-row items-center justify-between w-full bg-slate-900 p-2 rounded-md">
-              <p className="w-auto">Stock</p>
-              <p className="w-auto">{product.stock}</p>
+              <p className="w-auto font-montserrat font-semibold">Stock</p>
+              <p className="w-auto font-montserrat">{product.stock}</p>
             </div>
             <div className="flex flex-row items-center justify-between w-full bg-slate-900 p-2 rounded-md">
-              <p className="w-auto">Barcode</p> 
-              <p className="w-auto">{product.barcode}</p>
+              <p className="w-auto font-montserrat font-semibold">Barcode</p> 
+              <p className="w-auto font-montserrat">{product.barcode}</p>
             </div>
             <div className="flex flex-row items-center justify-between w-full bg-slate-900 p-2 rounded-md">
-              <p className="w-auto">Compared Price</p>
-              <p className="w-auto">{product.comparePrice}</p>
+              <p className="w-auto font-montserrat font-semibold">Compared Price</p>
+              <p className="w-auto font-montserrat">{product.comparePrice}</p>
             </div>
             <div className="flex flex-row items-center justify-between w-full bg-slate-900 p-2 rounded-md">
-              <p className="w-auto">Grams</p>
-              <p className="w-auto">{product.grams}</p>
+              <p className="w-auto font-montserrat font-semibold">Grams</p>
+              <p className="w-auto font-montserrat">{product.grams}</p>
             </div>
             <div className="flex flex-row items-center justify-between w-full bg-slate-900 p-2 rounded-md">
-              <p className="w-auto">Handle</p>
-              <p className="w-auto">{product.handle}</p>
+              <p className="w-auto font-montserrat font-semibold">Handle</p>
+              <p className="w-auto font-montserrat">{product.handle}</p>
             </div>
             <p className = "text-white">{deleteMsg}</p>
           </div>
