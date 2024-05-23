@@ -32,8 +32,11 @@ export default function ProductDetail(){
     return(
         <section className = "min-h-screen text-white flex flex-col items-center justify-center">
             <Header isRegresar = {isRegresar} />
-            <h1 className = "font-montserrat text-base md:text-lg text-center pt-4">Actualizar {producto.title}</h1>
             <p className = "font-montserrat text-base md:text-lg text-center">renders: {rerenders/2}</p>
+            <div className = " pt-[5vh] md:pt-[2vw] border-white border-2 mt-[2vh] rounded-md flex flex-col items-center justify-around p-4 m-[2vw]">
+            <h1 className = "font-montserrat text-base md:text-lg text-center pt-2 font-bold">Actualizar Producto</h1>
+            <h1 className = "font-montserrat text-base md:text-lg text-center pt-2 ">{producto.title}</h1>
+
             <form className = " w-[90vw]  flex flex-col items-center justify-center gap-[2vh] max-w-[600px] h-auto" onSubmit={handleSubmit(submitUpdate)}>
             <div className = "flex flex-col items-center justify-center w-[100%] max-w-[600px]">
                     <label className = "font-montserrat text-base md:text-lg text-left w-full font-semibold">SKU</label>
@@ -77,6 +80,7 @@ export default function ProductDetail(){
                 </Button>
 
             </form>
+            </div>
             <DevTool control = {control}/>
         </section>
     )
