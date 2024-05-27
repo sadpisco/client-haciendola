@@ -27,7 +27,7 @@ export default function CreateProduct(){
         <p className="font-montserrat text-base md:text-lg text-center">
           renders: {rerenders / 2}
         </p>
-        <div className = " pt-[5vh] md:pt-[2vw] border-white border-2 mt-[2vh] rounded-md flex flex-col items-center justify-around p-4 m-[2vw]">
+        <div className = " pt-[5vh] md:pt-[2vw] border-white border-1 mt-[2vh] rounded-md flex flex-col items-center justify-around p-4 m-[2vw]">
           <h1 className = "text-center font-montserrat text-3xl">Crear Producto</h1>
         <form
           className=" w-[75vw]  flex flex-col items-center justify-center gap-[2vh] max-w-[600px] h-auto"

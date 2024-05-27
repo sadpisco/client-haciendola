@@ -32,14 +32,14 @@ export default function ProductDetail(){
     }
 
     return(
-        <section className = "min-h-screen text-white flex flex-col items-center justify-center">
+        <section className = "min-h-screen text-white flex flex-col items-center justify-center w-s">
             <Header isRegresar = {isRegresar} />
             <p className = "font-montserrat text-base md:text-lg text-center">renders: {rerenders/2}</p>
-            <div className = " pt-[5vh] md:pt-[2vw] border-white border-2 mt-[2vh] rounded-md flex flex-col items-center justify-around p-4 m-[2vw]">
+            <div className = "w-[90%] pt-[5vh] md:pt-[2vw] border-white border-1 mt-[2vh] rounded-md flex flex-col items-center justify-around p-4 m-[2vw] mb-[2vh] max-w-[700px]">
             <h1 className = "font-montserrat text-base md:text-lg text-center pt-2 font-bold">Actualizar Producto</h1>
             <h1 className = "font-montserrat text-base md:text-lg text-center pt-2 ">{producto.title || <Skeleton />}</h1>
 
-            <form className = " w-[90vw]  flex flex-col items-center justify-center gap-[2vh] max-w-[600px] h-auto" onSubmit={handleSubmit(submitUpdate)}>
+            <form className = " w-[95%]  flex flex-col items-center justify-center gap-[2vh] max-w-[600px] h-auto" onSubmit={handleSubmit(submitUpdate)}>
             <div className = "flex flex-col items-center justify-center w-[100%] max-w-[600px]">
                     <label className = "font-montserrat text-base md:text-lg text-left w-full font-semibold">SKU</label>
                     <input defaultValue= {producto.sku} {...register('sku')} className='bg-white text-black rounded-sm p-1 w-full font-montserrat font-medium' />

@@ -13,11 +13,11 @@ export default function ProductModal({product, setModal, deleteProducto }){
     console.log(`El producto ${product.title} se ha renderizado.`);
     return (
       <motion.section className={styles.holeModal} exit = {{ opacity: 0 }}>
-        <motion.section className="cursor-default w-[85%] max-w-[1080px] h-auto flex flex-col items-center justify-center mb-[10vh] md:mb-[0vh] pt-[1vh] pb-[1vh] rounded-md border-white border-2" 
-        animate = {{ scale: 1,
+        <motion.section className="cursor-default w-[85%] max-w-[1080px] h-auto flex flex-col items-center justify-center mb-[10vh] md:mb-[0vh] pt-[1vh] pb-[2vh] rounded-md border-white border-2" 
+        animate = {{ 
           opacity: 2
          }}
-        initial = {{ scale: 0.2,
+        initial = {{ 
           opacity: 0
         }}
         >
