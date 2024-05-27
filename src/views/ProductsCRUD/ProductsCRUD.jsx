@@ -13,7 +13,8 @@ function ProductsCRUD(){
 
     const deleteProducto = useCallback((sku) => {
         dispatch(deleteProduct(sku));
-        setTimeout(()=> dispatch(getAllProducts()),1000);
+        dispatch(getAllProducts());
+        // setTimeout(()=> dispatch(getAllProducts()),1000);
     }, [dispatch]);
 
 useEffect(() => {
