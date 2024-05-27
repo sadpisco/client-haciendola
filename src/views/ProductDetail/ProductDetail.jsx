@@ -6,6 +6,8 @@ import Header from '../../components/Header/Header';
 import { useForm } from 'react-hook-form';
 import { DevTool } from '@hookform/devtools';
 import Button from 'react-bootstrap/Button';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 let rerenders = 0;
 
@@ -35,7 +37,7 @@ export default function ProductDetail(){
             <p className = "font-montserrat text-base md:text-lg text-center">renders: {rerenders/2}</p>
             <div className = " pt-[5vh] md:pt-[2vw] border-white border-2 mt-[2vh] rounded-md flex flex-col items-center justify-around p-4 m-[2vw]">
             <h1 className = "font-montserrat text-base md:text-lg text-center pt-2 font-bold">Actualizar Producto</h1>
-            <h1 className = "font-montserrat text-base md:text-lg text-center pt-2 ">{producto.title}</h1>
+            <h1 className = "font-montserrat text-base md:text-lg text-center pt-2 ">{producto.title || <Skeleton />}</h1>
 
             <form className = " w-[90vw]  flex flex-col items-center justify-center gap-[2vh] max-w-[600px] h-auto" onSubmit={handleSubmit(submitUpdate)}>
             <div className = "flex flex-col items-center justify-center w-[100%] max-w-[600px]">

@@ -3,16 +3,23 @@ import styles from './ProductModal.module.css';
 import Button from 'react-bootstrap/Button';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
-export default function ProductModal({product, setModal, deleteProducto}){
+export default function ProductModal({product, setModal, deleteProducto }){
     const navigate = useNavigate();
     const deleteMsg = useSelector( state => state.deleteProMsg);
+    console.log(`El producto ${product.title} se ha renderizado.`);
     return (
-      <section className={styles.holeModal}>
+      <motion.section className={styles.holeModal} exit = {{ opacity: 0 }}>
         <motion.section className="cursor-default w-[85%] max-w-[1080px] h-auto flex flex-col items-center justify-center mb-[10vh] md:mb-[0vh] pt-[1vh] pb-[1vh] rounded-md border-white border-2" 
-        animate = {{ scale: 1 }}
-        initial = {{ scale: 0.8}}
+        animate = {{ scale: 1,
+          opacity: 2
+         }}
+        initial = {{ scale: 0.2,
+          opacity: 0
+        }}
         >
           <div className=" h-auto flex flex-row items-center justify-between w-[95%]   pt-[2vh] pb-[2vh]">
             <h1 className="text-white text-lg md:text-2xl lg:text-3xl">
@@ -27,13 +34,12 @@ export default function ProductModal({product, setModal, deleteProducto}){
             className = "font-montserrat text-xs md:text-base"
             onClick = {() => {
             deleteProducto(product.sku);
-            setTimeout(()=> setModal(false), 1000);
+            setTimeout(()=> setModal(false), 10);
             }}>Eliminar</Button>
             <Button 
             className = "font-montserrat text-xs md:text-base"
             onClick={() => {
-            navigate('/products');
-            setTimeout(()=> setModal(false), 50);
+            setTimeout(()=> setModal(false), 10);
             }}>Cerrar</Button>
             </div>
 
@@ -41,7 +47,7 @@ export default function ProductModal({product, setModal, deleteProducto}){
           <div className="flex flex-col items-center justify-center w-[95%] gap-[1vh] h-auto">
             <div className="flex flex-col items-center justify-between w-full bg-black p-2 rounded-md ">
               <p className="w-auto font-montserrat font-semibold">Description</p>
-              <p className="w-auto font-montserrat">{product.description}</p>
+              <p className="w-auto font-montserrat">{product.description || <Skeleton />}</p>
             </div>
             <div className="flex flex-row items-center justify-between w-full bg-black p-2 rounded-md">
               <p className="w-auto font-montserrat font-semibold">SKU</p>
@@ -67,9 +73,14 @@ export default function ProductModal({product, setModal, deleteProducto}){
               <p className="w-auto font-montserrat font-semibold">Handle</p>
               <p className="w-auto font-montserrat">{product.handle}</p>
             </div>
-            <p className = "text-white">{deleteMsg}</p>
+            <motion.p className = "text-white"         animate = {{ scale: 1,
+          opacity: 1
+         }}
+        initial = {{ scale: 0.2,
+          opacity: 0
+        }}>{deleteMsg}</motion.p>
           </div>
         </motion.section>
-      </section>
+      </motion.section>
     );
 }
